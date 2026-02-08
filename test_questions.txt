@@ -1,0 +1,25 @@
+
+# English Questions
+1. What are the disciplinary penalties mentioned in the law?
+2. What are the types of leaves available for employees?
+3. What is the housing allowance for Grade 1 employees?
+4. Explain the conditions for sick leave.
+5. What are the working hours during Ramadan?
+6. Tell me about the end of service benefits.
+7. Can I get an education allowance for my children?
+8. What is the process for employee evaluation?
+
+# Arabic Questions (أسئلة بالعربية)
+1. ما هي العقوبات التأديبية المنصوص عليها؟
+2. ما هي أنواع الإجازات المتاحة للموظفين؟
+3. كم تبلغ علاوة السكن لموظفي الدرجة الأولى؟
+4. اشرح لي شروط الإجازة المرضية.
+5. ما هي ساعات العمل خلال شهر رمضان؟
+6. أخبرني عن مكافأة نهاية الخدمة.
+7. هل يمكنني الحصول على بدل تعليم لأبنائي؟
+8. ما هي آلية تقييم أداء الموظف؟
+
+# Specific Table Queries
+1. Show me Table 11 details.
+2. What is listed in Table 22 regarding salaries?
+3. Give me the medical technical jobs scaling from Table 14.

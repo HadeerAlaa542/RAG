@@ -1,0 +1,11 @@
+--- Starting API Tests against http://localhost:8000/api/ask ---
+
+[Test 1] Asking: 'What are the types of leaves mentioned in the HR law?'
+Status: SUCCESS (5.24s)
+Status: ERROR
+Exception: 'charmap' codec can't encode characters in position 11-16: character maps to <undefined>
+
+[Test 2] Asking: 'What are the details of Table 11?'
+Status: SUCCESS (3.48s)
+Status: ERROR
+Exception: 'charmap' codec can't encode characters in position 11-14: character maps to <undefined>

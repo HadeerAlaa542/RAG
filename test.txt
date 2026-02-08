@@ -1,0 +1,111 @@
+"ما هي قيمة العلاوة الفنية لـ فني تخدير؟
+
+
+
+Here are the 10 test questions in both English and Arabic.
+
+10 Bilingual Test Questions for HR Chatbot RAG Verification
+1. Salary & Allowances (Table 3)
+
+English: "What is the total of the Basic Salary and Cost of Living Allowance for a UAE national employee in Grade 1?"
+Arabic: "ما هو مجموع الراتب الأساسي وبدل غلاء المعيشة للموظف المواطن في الدرجة الأولى؟"
+Reference Answer: 28,500 AED.
+2. Technical Allowances - Medical Staff (Table 11)
+
+English: "What is the monthly technical allowance for a non-citizen Consultant Doctor in the First Category?"
+Arabic: "ما هي قيمة العلاوة الفنية الشهرية للطبيب الاستشاري غير المواطن في الفئة الأولى؟"
+Reference Answer: 16,214 AED.
+3. Degree Allowances (Table 3)
+
+English: "How much is the monthly allowance for an employee who holds a PhD degree?"
+Arabic: "كم تبلغ العلاوة الشهرية للموظف الحاصل على درجة الدكتوراه؟"
+Reference Answer: 2,000 AED.
+4. Job Requirements - Complex (Table 11)
+
+English: "What are the exact educational and experience requirements for a 'Clinical Scientist' in the First Category?"
+Arabic: "ما هي متطلبات المؤهل العلمي والخبرة العملية بالتحديد لوظيفة 'عالم سريري' في الفئة الأولى؟"
+Reference Answer: Bachelor's + Master's + PhD + 10 years experience after Master's.
+5. Non-Citizen Appointment Rules (Table 6)
+
+English: "For a non-citizen to be appointed to Grade 1, how many years of administrative experience are required if they hold a PhD?"
+Arabic: "لتعيين غير المواطن في الدرجة الأولى، كم عدد سنوات الخبرة الإدارية المطلوبة إذا كان حاصلاً على الدكتوراه؟"
+Reference Answer: 13 years.
+6. Promotion Cap Rules (Table 6)
+
+English: "What is the maximum grade a non-citizen holding a 3-year Diploma can reach through promotion?"
+Arabic: "ما هي أقصى درجة يمكن أن يصل إليها غير المواطن الحاصل على دبلوم 3 سنوات عن طريق الترقية؟"
+Reference Answer: Grade 4 (الدرجة الرابعة).
+7. Specific Role Allowances (Table 11)
+
+English: "What is the technical allowance amount for a 'Head of Nursing' (Category 5) who is a UAE national?"
+Arabic: "كم تبلغ قيمة العلاوة الفنية لـ 'رئيس هيئة التمريض' (الفئة الخامسة) للمواطن؟"
+Reference Answer: 5,400 AED.
+8. Experience Adjustment Rules (Table 6)
+
+English: "How is the appointment grade affected if a candidate's experience is less than half of the required duration?"
+Arabic: "كيف تتأثر درجة التعيين إذا كانت مدة خبرة المرشح أقل من نصف المدة المطلوبة؟"
+Reference Answer: Reduced by two grades (تُخفض بمقدار درجتين وظيفيتين).
+9. Unified Allowances (Table 11)
+
+English: "What is the value of the technical allowance for a 'Specialist Doctor' in the Third Category?"
+Arabic: "ما هي قيمة العلاوة الفنية لـ 'طبيب اختصاصي' في الفئة الثالثة؟"
+Reference Answer: 6,270 AED.
+10. Periodic Increments (Table 3)
+
+English: "What is the value of the periodic allowance for an employee in Grade 3?"
+Arabic: "كم تبلغ قيمة العلاوة الدورية للموظف في الدرجة الثالثة؟"
+Reference Answer: 250 AED.
+
+---------------------------------------------------------
+
+10 Additional Bilingual Test Questions (Set 2 - Tables 19 & 20)
+
+11. Temporary Contract Rewards - PhD (Table 19)
+English: "What is the maximum lump sum reward for a UAE national on a temporary contract (B) who holds a PhD?"
+Arabic: "ما هو الحد الأقصى للمكافأة المقطوعة للمواطن العامل بنظام العقد المؤقت (ب) والحاصل على درجة الدكتوراه؟"
+Reference Answer: 26,500 AED.
+
+12. Temporary Contract Rewards - Diploma (Table 19)
+English: "How much is the maximum reward for a UAE national on a temporary contract (B) with a 2-year diploma?"
+Arabic: "كم يبلغ الحد الأقصى للمكافأة للمواطن العامل بنظام العقد المؤقت (ب) والحاصل على دبلوم لمدة سنتين؟"
+Reference Answer: 19,500 AED.
+
+13. Official Mission Allowance - Director General (Table 20)
+English: "What is the daily official mission allowance for a Director General traveling outside the country?"
+Arabic: "ما هي قيمة بدل المهمة الرسمية اليومي للمدير العام عند السفر خارج الدولة؟"
+Reference Answer: 3,000 AED per day.
+
+14. Accommodation Allowance - Business Class (Table 20)
+English: "What is the daily accommodation allowance for employees eligible for Business Class travel outside the country?"
+Arabic: "ما هي قيمة بدل الإقامة اليومي للموظفين المستحقين لدرجة رجال الأعمال خارج الدولة؟"
+Reference Answer: 750 AED per day.
+
+15. Official Mission - Inside Country (Table 20)
+English: "What is the daily mission allowance for a Grade 3 employee (General Jobs) traveling inside the country?"
+Arabic: "ما هي قيمة بدل المهمة الرسمية اليومي لموظف الدرجة الثالثة (وظائف عامة) داخل الدولة؟"
+Reference Answer: 1,000 AED per day.
+
+16. Temporary Contract - Below Secondary (Table 19)
+English: "What is the maximum reward for a temporary contract employee with qualification below secondary school?"
+Arabic: "ما هو الحد الأقصى للمكافأة لموظف العقد المؤقت الحاصل على مؤهل أقل من الثانوية؟"
+Reference Answer: 17,500 AED.
+
+17. Accommodation - Inside Country (Table 20)
+English: "How much is the daily accommodation allowance for the Chairman inside the country?"
+Arabic: "كم يبلغ بدل الإقامة اليومي للرئيس داخل الدولة؟"
+Reference Answer: 700 AED per day.
+
+18. High Salary Technical Staff Allowance (Table 20)
+English: "What is the outside country mission allowance for technical staff with a basic salary exceeding 10,000 AED?"
+Arabic: "ما هو بدل المهمة الخارجية للفنيين الذين يزيد راتبهم الأساسي عن 10,000 درهم؟"
+Reference Answer: 2,500 AED per day.
+
+19. Temporary Contract - Bachelor's (Table 19)
+English: "What is the maximum reward for a Bachelor's degree holder on a temporary contract?"
+Arabic: "ما هو الحد الأقصى للمكافأة لحامل درجة البكالوريوس بنظام العقد المؤقت؟"
+Reference Answer: 25,000 AED.
+
+20. Economy Class Accommodation (Table 20)
+English: "What is the daily accommodation allowance for Economy Class travelers outside the country?"
+Arabic: "ما هي قيمة بدل الإقامة اليومي للمسافرين على الدرجة السياحية خارج الدولة؟"
+Reference Answer: 500 AED per day.
