@@ -11,14 +11,18 @@ import re
 import numpy as np
 
 from fastapi.staticfiles import StaticFiles
+from dotenv import load_dotenv
 
 # Config
-# Config
+BACKEND_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.dirname(BACKEND_DIR)
+
+# Load environment variables from .env file
+load_dotenv(os.path.join(PROJECT_ROOT, '.env'))
+
 # Ensure OPENAI_API_KEY is set in your environment variables
 if "OPENAI_API_KEY" not in os.environ:
     print("Warning: OPENAI_API_KEY not found in environment variables.")
-BACKEND_DIR = os.path.dirname(os.path.abspath(__file__))
-PROJECT_ROOT = os.path.dirname(BACKEND_DIR)
 IMAGES_DIR = os.path.join(PROJECT_ROOT, "materials", "tables_images")
 # Using clean names
 QDRANT_PATH = os.path.join(BACKEND_DIR, "db", "tables_db")
@@ -204,8 +208,8 @@ def ask_question(request: QueryRequest):
     context_text = ""
     
     # Score Comparison Logic
-    best_table_score = hits_tables[0].score if hits_tables else -1.0
-    best_text_score = hits_text[0].score if hits_text else -1.0
+    best_table_score = hits_tables[0].score if hits_tables else -999.0
+    best_text_score = hits_text[0].score if hits_text else -999.0
     
     print(f"Scores - Table: {best_table_score}, Text: {best_text_score}")
     
@@ -217,7 +221,16 @@ def ask_question(request: QueryRequest):
         use_table_context = False
     
     images = []
-    if use_table_context and hits_tables:
+    
+    # SOFT FILTER: Only show images if the score is decent (e.g. > -2.0)
+    # Stricter threshold to avoid showing random tables for chatty/irrelevant queries.
+    show_images_threshold = -2.0
+    is_image_relevant = best_table_score > show_images_threshold
+    
+    print(f"Image Relevance Check: Score {best_table_score} > {show_images_threshold}? {is_image_relevant}")
+
+    # Only process images and captions if table context is used AND relevant
+    if use_table_context and hits_tables and is_image_relevant:
         # Collect captions and images from ALL retrieved tables (Top-K)
         captions_list = []
         for hit in hits_tables:
@@ -269,11 +282,12 @@ def ask_question(request: QueryRequest):
             " لديك صلاحية الوصول إلى نوعين من المصادر: جداول (Tables) ونصوص قانونية (Text Articles).\n"
             "قاعدتك الأساسية هي: يجب أن تكون إجابتك باللغة العربية الفصحى حصراً.\n"
             "القواعد:\n"
-            "1. إذا كانت الإجابة مستمدة من جدول، **يجب** أن تذكر رقم الجدول بوضوح في إجابتك (مثلاً: 'حسب ما ورد في الجدول رقم 10...').\n"
-            "2. إذا كانت الإجابة مستمدة من نص قانوني عادي، **لا تذكر أي جداول**، وبدلاً من ذلك اذكر اسم المادة أو رقم الصفحة إن وجد.\n"
-            "3. انتبه جيداً للمسميات الوظيفية (مثل 'فني' و 'تقني') ولا تخلط بينها.\n"
-            "4. الإجابة يجب أن تكون دقيقة ومبنية فقط على السياق المزود أدناه.\n"
-            "5. ممنوع الإجابة باللغة الإنجليزية.\n"
+            "1. **المحادثة العادية:** إذا بدأ المستخدم بالتحية (مثل 'مرحباً'، 'صباح الخير')، رد عليه بلطف وتحية مماثلة، وعرف بنفسك كمساعد للموارد البشرية.\n"
+            "2. إذا كانت الإجابة مستمدة من جدول، **يجب** أن تذكر رقم الجدول بوضوح في إجابتك (مثلاً: 'حسب ما ورد في الجدول رقم 10...').\n"
+            "3. إذا كانت الإجابة مستمدة من نص قانوني عادي، **لا تذكر أي جداول**، وبدلاً من ذلك اذكر اسم المادة أو رقم الصفحة إن وجد.\n"
+            "4. انتبه جيداً للمسميات الوظيفية (مثل 'فني' و 'تقني') ولا تخلط بينها.\n"
+            "5. الإجابة يجب أن تكون دقيقة ومبنية فقط على السياق المزود أدناه.\n"
+            "6. ممنوع الإجابة باللغة الإنجليزية.\n"
         )
     else:
         print("Detected Language: English")
@@ -282,11 +296,12 @@ def ask_question(request: QueryRequest):
             "You have access to two types of sources: Tables and Text Articles.\n"
             "Your PRIMARY RULE is to reply in ENGLISH.\n"
             "RULES:\n"
-            "1. If the answer comes from a Table, you MUST explicitly mention the Table Number (e.g., 'According to Table 10...').\n"
-            "2. If the answer comes from a Text Article, DO NOT mention any tables. Instead, cite the Article name or Page number if available.\n"
-            "3. Pay extremely close attention to similar terms (e.g., 'Technician' vs 'Technologist').\n"
-            "4. Answer strictly based on the provided context.\n"
-            "5. Do not use Arabic in your response.\n"
+            "1. **Casual Chat:** If the user greets you (e.g., 'Hi', 'Good morning'), reply warmly and introduce yourself as an HR assistant.\n"
+            "2. If the answer comes from a Table, you MUST explicitly mention the Table Number (e.g., 'According to Table 10...').\n"
+            "3. If the answer comes from a Text Article, DO NOT mention any tables. Instead, cite the Article name or Page number if available.\n"
+            "4. Pay extremely close attention to similar terms (e.g., 'Technician' vs 'Technologist').\n"
+            "5. Answer strictly based on the provided context.\n"
+            "6. Do not use Arabic in your response.\n"
         )
 
     user_message = f"Context:\n{context_text}\n\nQuestion: {query}"
